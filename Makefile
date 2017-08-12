@@ -16,6 +16,7 @@ browser: lib/**/*.coffee
 
 browser-demo: js demo/browser.js
 	./node_modules/.bin/browserify demo/browser.js > demo/bundle.js
+	ls -l demo/bundle.js
 
 docs: pdf-guide website browser-demo
 

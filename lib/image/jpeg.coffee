@@ -1,4 +1,4 @@
-fs = require 'fs'
+# fs = require 'fs'
 
 class JPEG
   MARKERS = [0xFFC0, 0xFFC1, 0xFFC2, 0xFFC3, 0xFFC5, 0xFFC6, 0xFFC7,

@@ -4,7 +4,7 @@ By Devon Govett
 ###
 
 stream = require 'stream'
-fs = require 'fs'
+# fs = require 'fs'
 PDFObject = require './object'
 PDFReference = require './reference'
 PDFPage = require './page'
@@ -72,8 +72,8 @@ class PDFDocument extends stream.Readable
 
   # Load mixins
   mixin require './mixins/color'
-  mixin require './mixins/vector'
-  mixin require './mixins/fonts'
+  # mixin require './mixins/vector'
+  # mixin require './mixins/fonts'
   mixin require './mixins/text'
   mixin require './mixins/images'
   mixin require './mixins/annotations'
@@ -149,19 +149,6 @@ class PDFDocument extends stream.Readable
     if --@_waiting is 0 and @_ended
       @_finalize()
       @_ended = false
-
-  write: (filename, fn) ->
-    # print a deprecation warning with a stacktrace
-    err = new Error '
-      PDFDocument#write is deprecated, and will be removed in a future version of PDFKit.
-      Please pipe the document into a Node stream.
-    '
-
-    console.warn err.stack
-
-    @pipe fs.createWriteStream(filename)
-    @end()
-    @once 'end', fn
 
   output: (fn) ->
     # more difficult to support this. It would involve concatenating all the buffers together
