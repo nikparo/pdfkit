@@ -1,3 +1,4 @@
+# fontkit is responsible for about 1.4MB ...
 fontkit = require 'fontkit'
 
 class PDFFont

@@ -16,7 +16,9 @@ function makePDF(PDFDocument, lorem) {
   doc.on('data', buffers.push.bind(buffers));
   
   // draw some text
-  doc.fontSize(25)
+  // doc.fontSize(25)
+  doc.font('Helvetica')
+     .fontSize(25)
      .text('Here is some vector graphics...', 100, 80);
      
   // some vector graphics
@@ -38,7 +40,8 @@ function makePDF(PDFDocument, lorem) {
      
   // and some justified text wrapped into columns
   doc.text('And here is some wrapped text...', 100, 300)
-     .font('Times-Roman', 13)
+    //  .font('Times-Roman', 13)
+     .fontSize(13)
      .moveDown()
      .text(lorem, {
        width: 412,

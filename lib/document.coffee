@@ -72,8 +72,8 @@ class PDFDocument extends stream.Readable
 
   # Load mixins
   mixin require './mixins/color'
-  # mixin require './mixins/vector'
-  # mixin require './mixins/fonts'
+  mixin require './mixins/vector'
+  mixin require './mixins/fonts'
   mixin require './mixins/text'
   mixin require './mixins/images'
   mixin require './mixins/annotations'
