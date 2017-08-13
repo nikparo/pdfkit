@@ -1,5 +1,11 @@
 # fontkit is responsible for about 1.4MB ...
-fontkit = require 'fontkit'
+# fontkit = require 'fontkit'
+# fontkit = require '../../fontkit'
+# fontkit = require '../../fontkit/base'
+fontkit = require '../../fontkit/lite'
+# fontkit = require 'fontkit/base'
+# fontkit =
+#   create: ''
 
 class PDFFont
   @open: (document, src, family, id) ->

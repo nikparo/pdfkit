@@ -8,14 +8,17 @@ browser: lib/**/*.coffee
 	mkdir -p build/
 	./node_modules/.bin/browserify \
 		--standalone PDFDocument \
-		--debug \
 		--transform coffeeify \
 		--extension .coffee \
 		lib/document.coffee \
-		| ./node_modules/.bin/exorcist build/pdfkit.js.map > build/pdfkit.js
+		| ./node_modules/.bin/uglifyjs > build/pdfkit.js
+		# --debug \
+		# | ./node_modules/.bin/exorcist build/pdfkit.js.map > build/pdfkit.js
+		ls -l build/pdfkit.js
 
 browser-demo: js demo/browser.js
 	./node_modules/.bin/browserify demo/browser.js > demo/bundle.js
+	# ./node_modules/.bin/browserify -t [ babelify --presets [ es2015 ] --plugins [ transform-async-to-generator ] ] demo/browser.js > demo/bundle.js
 	ls -l demo/bundle.js
 
 docs: pdf-guide website browser-demo
