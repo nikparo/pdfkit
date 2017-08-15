@@ -1,3 +1,7 @@
+---
+Fork of PDFKit. Standard fonts removed, /build/pdfkit.js added to module
+---
+
 # PDFKit
 
 A JavaScript PDF generation library for Node and the browser.

@@ -10,4 +10,3 @@ playground/
 demo/bundle.js
 *.html
 !demo/browser.html
-docs/

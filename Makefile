@@ -1,5 +1,9 @@
 .PHONY: js
 
+both:
+	make js
+	make browser
+
 js:
 	./node_modules/.bin/coffee -o js -c lib/
 	# cp -r lib/font/data js/font/data
@@ -12,14 +16,9 @@ browser: lib/**/*.coffee
 		--extension .coffee \
 		lib/document.coffee \
 		-o build/pdfkit.js
-		# | ./node_modules/.bin/uglifyjs > build/pdfkit.js
-		# --debug \
-		# | ./node_modules/.bin/exorcist build/pdfkit.js.map > build/pdfkit.js
-		ls -l build/pdfkit.js
 
 browser-demo: js demo/browser.js
 	./node_modules/.bin/browserify demo/browser.js > demo/bundle.js
-	# ./node_modules/.bin/browserify -t [ babelify --presets [ es2015 ] --plugins [ transform-async-to-generator ] ] demo/browser.js > demo/bundle.js
 	ls -l demo/bundle.js
 
 docs: pdf-guide website browser-demo
