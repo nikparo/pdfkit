@@ -11,7 +11,8 @@ browser: lib/**/*.coffee
 		--transform coffeeify \
 		--extension .coffee \
 		lib/document.coffee \
-		| ./node_modules/.bin/uglifyjs > build/pdfkit.js
+		-o build/pdfkit.js
+		# | ./node_modules/.bin/uglifyjs > build/pdfkit.js
 		# --debug \
 		# | ./node_modules/.bin/exorcist build/pdfkit.js.map > build/pdfkit.js
 		ls -l build/pdfkit.js

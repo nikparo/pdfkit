@@ -1,5 +1,6 @@
 # fontkit is responsible for about 1.4MB ...
 fontkit = require 'fontkit'
+# fontkit = require 'fontkit/lite.js'
 # fontkit = require '../../fontkit'
 # fontkit = require '../../fontkit/lite'
 
