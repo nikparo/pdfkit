@@ -4,7 +4,6 @@ By Devon Govett
 ###
 
 stream = require 'stream'
-# fs = require 'fs'
 PDFObject = require './object'
 PDFReference = require './reference'
 PDFPage = require './page'

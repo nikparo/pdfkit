@@ -2,7 +2,7 @@
 
 js:
 	./node_modules/.bin/coffee -o js -c lib/
-	cp -r lib/font/data js/font/data
+	# cp -r lib/font/data js/font/data
 
 browser: lib/**/*.coffee
 	mkdir -p build/
